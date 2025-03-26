@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="hsf302.se1868vj.he187349.controller.RestaurantController"
+      spacing="15"
+      style="-fx-background-color: white;">
+
+    <!-- Header Title -->
+    <HBox alignment="CENTER">
+        <Label text="Quản Lý Nhà Hàng" style="-fx-font-weight: bold; -fx-font-size: 18pt;"/>
+    </HBox>
+
+    <!-- Restaurant List Title -->
+    <HBox>
+        <padding>
+            <Insets top="10" left="10" bottom="5" />
+        </padding>
+        <Label text="DANH SÁCH NHÀ HÀNG" style="-fx-font-weight: bold; -fx-font-size: 14pt;"/>
+    </HBox>
+
+    <!-- Search Form -->
+    <GridPane hgap="10" vgap="10">
+        <padding>
+            <Insets left="10" right="10" />
+        </padding>
+
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="250" />
+
+        <Label text="Tên :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="500" />
+
+        <HBox spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="searchButton" text="Tìm Nhà Hàng" prefWidth="150"
+                    style="-fx-background-color: lightblue; -fx-border-color: #7090c0; -fx-border-width: 1;" />
+            <Button fx:id="addButton" text="Thêm Mới" prefWidth="150"
+                    style="-fx-background-color: lightblue; -fx-border-color: #7090c0; -fx-border-width: 1;" />
+        </HBox>
+    </GridPane>
+
+    <!-- Restaurant Data Table -->
+    <TableView fx:id="restaurantTable" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets left="10" right="10" />
+        </padding>
+        <columns>
+            <TableColumn fx:id="sttColumn" text="STT" prefWidth="100"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="250"/>
+            <TableColumn fx:id="nameColumn" text="Tên" prefWidth="250"/>
+            <TableColumn fx:id="addressColumn" text="Địa Chỉ" prefWidth="250"/>
+            <TableColumn fx:id="dateColumn" text="Ngày tạo" prefWidth="150"/>
+            <TableColumn fx:id="column1" text="" prefWidth="150"/>
+            <TableColumn fx:id="column2" text="" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <padding>
+        <Insets bottom="20" />
+    </padding>
+</VBox>
